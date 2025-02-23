@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* 既存のスタイル定義は省略 */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #f0f;
+  animation: confetti-fall 4s linear infinite;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.confetti:nth-child(2n) {
+  background-color: #0ff;
+}
+
+.confetti:nth-child(3n) {
+  background-color: #ff0;
+}
+
+.confetti:nth-child(4n) {
+  background-color: #f90;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+

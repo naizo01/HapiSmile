@@ -1,0 +1,83 @@
+[
+  {
+    "id": "dQw4w9WgXcQ",
+    "title": "Never Gonna Give You Up",
+    "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg",
+    "category": "Classic Hits",
+    "views": 1200000,
+    "uploadDate": "2023-05-15T12:00:00Z"
+  },
+  {
+    "id": "9bZkp7q19f0",
+    "title": "Gangnam Style",
+    "thumbnail": "https://img.youtube.com/vi/9bZkp7q19f0/0.jpg",
+    "category": "Dance Hits",
+    "views": 980000,
+    "uploadDate": "2023-06-01T10:30:00Z"
+  },
+  {
+    "id": "kJQP7kiw5Fk",
+    "title": "Despacito",
+    "thumbnail": "https://img.youtube.com/vi/kJQP7kiw5Fk/0.jpg",
+    "category": "Latin Pop",
+    "views": 1500000,
+    "uploadDate": "2023-05-20T09:15:00Z"
+  },
+  {
+    "id": "JGwWNGJdvx8",
+    "title": "Shape of You",
+    "thumbnail": "https://img.youtube.com/vi/JGwWNGJdvx8/0.jpg",
+    "category": "Pop",
+    "views": 850000,
+    "uploadDate": "2023-06-10T14:45:00Z"
+  },
+  {
+    "id": "OPf0YbXqDm0",
+    "title": "Uptown Funk",
+    "thumbnail": "https://img.youtube.com/vi/OPf0YbXqDm0/0.jpg",
+    "category": "Funk",
+    "views": 720000,
+    "uploadDate": "2023-05-25T11:20:00Z"
+  },
+  {
+    "id": "hT_nvWreIhg",
+    "title": "Counting Stars",
+    "thumbnail": "https://img.youtube.com/vi/hT_nvWreIhg/0.jpg",
+    "category": "Pop Rock",
+    "views": 650000,
+    "uploadDate": "2023-06-05T16:30:00Z"
+  },
+  {
+    "id": "09R8_2nJtjg",
+    "title": "Sugar",
+    "thumbnail": "https://img.youtube.com/vi/09R8_2nJtjg/0.jpg",
+    "category": "Pop",
+    "views": 580000,
+    "uploadDate": "2023-06-15T08:00:00Z"
+  },
+  {
+    "id": "RgKAFK5djSk",
+    "title": "See You Again",
+    "thumbnail": "https://img.youtube.com/vi/RgKAFK5djSk/0.jpg",
+    "category": "Hip Hop",
+    "views": 1100000,
+    "uploadDate": "2023-05-30T13:10:00Z"
+  },
+  {
+    "id": "YqeW9_5kURI",
+    "title": "Lean On",
+    "thumbnail": "https://img.youtube.com/vi/YqeW9_5kURI/0.jpg",
+    "category": "Electronic",
+    "views": 890000,
+    "uploadDate": "2023-06-20T15:40:00Z"
+  },
+  {
+    "id": "CevxZvSJLk8",
+    "title": "Roar",
+    "thumbnail": "https://img.youtube.com/vi/CevxZvSJLk8/0.jpg",
+    "category": "Pop",
+    "views": 750000,
+    "uploadDate": "2023-06-25T10:00:00Z"
+  }
+]
+

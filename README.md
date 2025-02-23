@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smile & Earn Tokens (スマイル＆アーントークン)
 
-## Getting Started
+Smile & Earn Tokensは、ユーザーが動画を見ながら笑顔でいることでトークンを獲得できる、インタラクティブな動画プラットフォームです。このユニークなコンセプトは、エンターテインメントとポジティブな強化を組み合わせ、ユーザーが楽しく積極的に参加することを促進します。
 
-First, run the development server:
+## 主な機能
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **動画ライブラリ**: Netflix風のインターフェースで動画を閲覧・選択
+2. **笑顔検出**: MediaPipe Face Landmarkerを使用したリアルタイムの笑顔検出
+3. **トークンシステム**: 動画視聴中の笑顔に応じてトークンを獲得
+4. **報酬ページ**: 獲得したトークンを様々な報酬と交換
+5. **インタラクティブUI**: アニメーションと視覚的フィードバックを活用した魅力的なユーザーインターフェース
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 各ページの詳細機能
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ホームページ（動画ライブラリ）
+- Netflix風のレイアウトで動画をカテゴリー別に表示
+- 大きなヒーローセクションで注目の動画を紹介
+- 動画カードにホバーエフェクトを実装し、タイトルとプレイボタンを表示
+- レスポンシブデザインで様々なデバイスに対応
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 動画視聴ページ
+- YouTubeプレーヤーを使用した動画再生
+- WebカメラフィードとMediaPipe Face Landmarkerを使用したリアルタイムの笑顔検出
+- 笑顔度に応じたトークン獲得システム
+- リアルタイムのトークン残高表示
+- コメントセクションで他のユーザーとのインタラクション
 
-## Learn More
+### 報酬ページ
+- アニメーション付きの残高表示
+- 様々な報酬オプションをカード形式で表示
+- NFTのミント機能（シミュレーション）
+- トークンを使用した報酬の獲得プロセス
+- トースト通知による操作結果のフィードバック
 
-To learn more about Next.js, take a look at the following resources:
+## 使用技術
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 13 (Appルーター)
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/uiコンポーネント
+- Framer Motion（アニメーション）
+- MediaPipe Face Landmarker（笑顔検出）
+- Lucide React（アイコン）
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## セットアップ
 
-## Deploy on Vercel
+1. リポジトリをクローン:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,101 +1,91 @@
-import Image from "next/image";
+import { Layout } from "@/components/Layout"
+import { VideoSlider } from "@/components/VideoSlider"
+import { VideoGrid } from "@/components/VideoGrid"
+import videosData from "@/context/videos.json"
+import { Button } from "@/components/ui/button"
+import { Play, Info } from "lucide-react"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const featuredVideo = videosData[Math.floor(Math.random() * videosData.length)]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const shuffleArray = (array: typeof videosData) => {
+    const shuffled = [...array]
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    }
+    return shuffled
+  }
+
+  const getLatestVideos = () => {
+    return shuffleArray(
+      videosData.sort((a, b) => new Date(b.uploadDate).getTime() - new Date(a.uploadDate).getTime()),
+    ).slice(0, 5)
+  }
+
+  const getRankedVideos = () => {
+    return shuffleArray(videosData.sort((a, b) => b.views - a.views)).slice(0, 5)
+  }
+
+  const getFeaturedVideos = () => {
+    return shuffleArray(videosData).slice(0, 5)
+  }
+
+  return (
+    <Layout>
+      <div className="min-h-screen bg-black text-white">
+        {/* Hero Section */}
+        <div className="relative h-[60vh] mx-auto my-6 max-w-[1400px] rounded-xl overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/main_header-Yi28YHA7az3zWbCr6D8IdiTOOZlqiW.png')`,
+              backgroundSize: "cover",
+              filter: "brightness(0.4)",
+            }}
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+          <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 lg:w-1/2 z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+              Smile & Earn Together
+            </h1>
+            <p className="text-base md:text-lg mb-6 text-gray-200 max-w-2xl">
+              Watch this featured video and earn tokens while you smile! Join millions of viewers who've earned rewards
+              watching this amazing content.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button
+                size="lg"
+                className="bg-yellow-400 hover:bg-yellow-500 text-black text-base md:text-lg px-6 py-5 transition-all hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/20"
+              >
+                <Play className="mr-2 h-5 w-5" /> Play
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base md:text-lg px-6 py-5 border-2 border-yellow-400/50 hover:bg-yellow-500/20 transition-all hover:scale-105 hover:border-yellow-400"
+              >
+                <Info className="mr-2 h-5 w-5" /> More Info
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+
+        {/* Video Sliders */}
+        <div className="space-y-12 pb-12 max-w-[1400px] mx-auto overflow-visible">
+          <VideoSlider title="最新" videos={getLatestVideos()} />
+          <VideoSlider title="ランキング" videos={getRankedVideos()} />
+          <VideoSlider title="注目" videos={getFeaturedVideos()} />
+        </div>
+
+        {/* All Videos Grid */}
+        <div className="pb-12 px-4 max-w-[1400px] mx-auto">
+          <VideoGrid videos={shuffleArray(videosData)} />
+        </div>
+      </div>
+    </Layout>
+  )
 }
+

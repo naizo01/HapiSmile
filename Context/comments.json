@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "user": "HappyViewer123",
+    "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=HappyViewer123",
+    "content": "This video always makes me smile! 😄",
+    "timestamp": "2023-04-01T12:30:00Z"
+  },
+  {
+    "id": 2,
+    "user": "LaughingOut_Loud",
+    "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=LaughingOut_Loud",
+    "content": "I can't stop laughing! My smile score must be through the roof! 🤣",
+    "timestamp": "2023-04-01T12:35:00Z"
+  },
+  {
+    "id": 3,
+    "user": "TokenCollector42",
+    "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=TokenCollector42",
+    "content": "Just earned 5 LOL tokens watching this! Best video ever! 🎉",
+    "timestamp": "2023-04-01T12:40:00Z"
+  },
+  {
+    "id": 4,
+    "user": "GrinMaster",
+    "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=GrinMaster",
+    "content": "My cheeks hurt from smiling so much! Worth it for the tokens though! 😁",
+    "timestamp": "2023-04-01T12:45:00Z"
+  },
+  {
+    "id": 5,
+    "user": "JoyfulJester",
+    "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=JoyfulJester",
+    "content": "This site is genius! Combining laughter and rewards? Count me in! 🙌",
+    "timestamp": "2023-04-01T12:50:00Z"
+  }
+]
+
