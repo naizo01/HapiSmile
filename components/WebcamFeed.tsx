@@ -2,12 +2,13 @@
 
 import { useRef, useEffect, useState } from "react"
 import { CardContent } from "@/components/ui/card"
+import { useSmile } from "@/Context/SmileContext"
 
 export function WebcamFeed() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [isClient, setIsClient] = useState(false)
-  const [isSmiling, setIsSmiling] = useState(false)
+  const { setIsSmiling } = useSmile()
 
   useEffect(() => {
     setIsClient(true)

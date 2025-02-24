@@ -11,6 +11,7 @@ import { Layout } from "@/components/Layout"
 import { useParams } from "next/navigation"
 import { useTokenBalance } from "@/hooks/useTokenBalance"
 import { motion, AnimatePresence } from "framer-motion"
+import { useSmile } from "@/Context/SmileContext"
 
 interface Video {
   id: string
@@ -20,6 +21,7 @@ interface Video {
 
 export default function VideoPage() {
   const params = useParams()
+  const { isSmiling } = useSmile()
   const [smileScore, setSmileScore] = useState(0)
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null)
   const [showEffect, setShowEffect] = useState(false)
@@ -41,12 +43,24 @@ export default function VideoPage() {
   }, [earnTokens])
 
   useEffect(() => {
-    if (lastEarnedToken > 0) {
+    let timer: NodeJS.Timeout
+
+    if (isSmiling && !showEffect) {
       setShowEffect(true)
-      const timer = setTimeout(() => setShowEffect(false), 4000)
-      return () => clearTimeout(timer)
     }
-  }, [lastEarnedToken])
+
+    if (showEffect) {
+      timer = setTimeout(() => {
+        setShowEffect(false)
+      }, 2000)
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer)
+    }
+  }, [isSmiling, showEffect])
+  console.log("isSmiling", isSmiling)
+  console.log("showEffect", showEffect)
 
   const createConfetti = () => {
     return Array.from({ length: 50 }).map((_, index) => (

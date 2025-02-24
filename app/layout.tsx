@@ -2,6 +2,7 @@ import "./globals.css"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { SmileProvider } from "@/Context/SmileContext"
 
 // Interフォントの設定を修正
 const inter = Inter({ 
@@ -34,7 +35,9 @@ export default function RootLayout({
       <head>
       </head>
       <body className={`${inter.className} bg-background text-foreground min-h-screen`}>
-        {children}
+        <SmileProvider>
+          {children}
+        </SmileProvider>
       </body>
     </html>
   )
