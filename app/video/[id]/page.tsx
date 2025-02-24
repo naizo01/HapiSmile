@@ -34,18 +34,11 @@ export default function VideoPage() {
   }, [params?.id])
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const earned = Math.random() * 2
-      earnTokens(earned)
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [earnTokens])
-
-  useEffect(() => {
     let timer: NodeJS.Timeout
 
     if (isSmiling && !showEffect) {
+      const earned = Math.random() * 2 + 1
+      earnTokens(earned)
       setShowEffect(true)
     }
 
@@ -58,7 +51,8 @@ export default function VideoPage() {
     return () => {
       if (timer) clearTimeout(timer)
     }
-  }, [isSmiling, showEffect])
+  }, [isSmiling, showEffect, earnTokens])
+
   console.log("isSmiling", isSmiling)
   console.log("showEffect", showEffect)
 
@@ -174,7 +168,7 @@ export default function VideoPage() {
         </AnimatePresence>
         {/* 右下の通知 */}
         <AnimatePresence>
-          {lastEarnedToken > 0 && (
+          {lastEarnedToken > 0 && showEffect && (
             <motion.div
               initial={{ opacity: 0, y: 50, x: "100%" }}
               animate={{ opacity: 1, y: 0, x: 0 }}
