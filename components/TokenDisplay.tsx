@@ -18,13 +18,13 @@ export function TokenDisplay({ newTokens, totalTokens, smileScore }: TokenDispla
           <p className="text-3xl font-bold text-yellow-400">+{newTokens.toFixed(1)}</p>
           <p className="text-sm text-gray-400 mt-1">Total: {totalTokens.toFixed(1)} LOL</p>
         </div>
-        <div>
+        {/* <div>
           <div className="flex items-center justify-between mb-2">
             <h3 className="text-sm font-medium text-gray-200">Smile Score</h3>
             <span className="text-sm text-gray-400">{smileScore.toFixed(0)}%</span>
           </div>
           <Progress value={smileScore} className="w-full" />
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   )
