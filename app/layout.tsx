@@ -31,10 +31,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark bg-black">
       <head>
       </head>
-      <body className={`${inter.className} bg-background text-foreground min-h-screen`}>
+      <body className={`${inter.className} bg-black text-foreground min-h-screen`}>
         <SmileProvider>
           {children}
         </SmileProvider>
