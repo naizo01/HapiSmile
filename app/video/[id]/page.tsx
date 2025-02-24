@@ -53,9 +53,6 @@ export default function VideoPage() {
     }
   }, [isSmiling, showEffect, earnTokens])
 
-  console.log("isSmiling", isSmiling)
-  console.log("showEffect", showEffect)
-
   const createConfetti = () => {
     return Array.from({ length: 50 }).map((_, index) => (
       <motion.div

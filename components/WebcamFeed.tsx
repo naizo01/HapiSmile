@@ -34,7 +34,8 @@ export function WebcamFeed() {
     const mouthWidth = Math.abs(leftMouth.x - rightMouth.x)
     const mouthRatio = mouthWidth / mouthHeight
     // 比率が一定以上なら笑顔と判定
-    return mouthRatio < 10.0
+    // console.log("mouthRatio", mouthRatio)
+    return mouthRatio < 3.0
   }
 
   useEffect(() => {
