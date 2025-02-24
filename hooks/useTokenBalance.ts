@@ -1,22 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Cookies from 'js-cookie'
+
+const COOKIE_KEY = 'smile_token_balance'
 
 export function useTokenBalance() {
   const [newTokens, setNewTokens] = useState(0)
-  const [totalTokens, setTotalTokens] = useState(100)
+  const [totalTokens, setTotalTokens] = useState(() => {
+    const savedBalance = Cookies.get(COOKIE_KEY)
+    return savedBalance ? parseFloat(savedBalance) : 0
+  })
   const [lastEarnedToken, setLastEarnedToken] = useState(0)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const earned = Math.random() * 2
-      setNewTokens((prev) => prev + earned)
-      setTotalTokens((prev) => prev + earned)
-      setLastEarnedToken(earned)
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [])
+    Cookies.set(COOKIE_KEY, totalTokens.toString(), { expires: 365 })
+  }, [totalTokens])
 
   return {
     newTokens,
