@@ -1,10 +1,17 @@
+import "./globals.css"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+// Interフォントの設定を修正
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'] // フォールバックフォントを指定
+})
 
+// グローバル型定義
 declare global {
   interface Window {
     FilesetResolver: any
@@ -25,12 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <script
-          src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
-          crossOrigin="anonymous"
-        ></script>
       </head>
-      <body className={`${inter.className} bg-background text-foreground`}>{children}</body>
+      <body className={`${inter.className} bg-background text-foreground min-h-screen`}>
+        {children}
+      </body>
     </html>
   )
 }
