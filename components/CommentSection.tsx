@@ -29,12 +29,12 @@ export function CommentSection() {
 
     setIsSubmitting(true)
 
-    // Simulate network delay
+    // ネットワーク遅延をシミュレート
     await new Promise((resolve) => setTimeout(resolve, 500))
 
     const newCommentObj: Comment = {
       id: comments.length + 1,
-      user: "CurrentUser", // You can replace this with the actual user name
+      user: "CurrentUser", // 実際のユーザー名に置き換えることができます
       avatar: `https://api.dicebear.com/6.x/avataaars/svg?seed=CurrentUser${Date.now()}`,
       content: newComment,
       timestamp: new Date().toISOString(),
@@ -54,17 +54,17 @@ export function CommentSection() {
 
   return (
     <div className="space-y-6">
-      {/* Comment Input Section */}
+      {/* コメント入力セクション */}
       <div className="relative space-y-4">
         <div className="flex items-start gap-4">
           <Avatar>
-            <AvatarImage src={`https://api.dicebear.com/6.x/avataaars/svg?seed=CurrentUser`} alt="Current User" />
+            <AvatarImage src={`https://api.dicebear.com/6.x/avataaars/svg?seed=CurrentUser`} alt="現在のユーザー" />
             <AvatarFallback>CU</AvatarFallback>
           </Avatar>
           <div className="flex-1 space-y-2">
             <div className="relative">
               <Textarea
-                placeholder="Share your thoughts..."
+                placeholder="あなたの考えを共有しましょう..."
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
                 onKeyDown={handleKeyPress}
@@ -81,18 +81,18 @@ export function CommentSection() {
                 </Button>
               </div>
             </div>
-            <p className="text-xs text-gray-400">Press Shift + Enter for a new line, Enter to submit</p>
+            <p className="text-xs text-gray-400">Shift + Enterで改行、Enterで送信</p>
           </div>
         </div>
       </div>
 
-      {/* Comments Count */}
+      {/* コメント数 */}
       <div className="flex items-center gap-2 text-sm text-gray-400">
         <MessageCircle className="h-5 w-5" />
-        <span>{comments.length} Comments</span>
+        <span>{comments.length} コメント</span>
       </div>
 
-      {/* Comments List */}
+      {/* コメントリスト */}
       <ScrollArea className="h-[400px] pr-4">
         <div className="space-y-6">
           {comments.map((comment, index) => (

@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "user": "HappyViewer123",
+    "user": "ハッピービューワー123",
     "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=HappyViewer123",
-    "content": "This video always makes me smile! 😄",
+    "content": "この動画はいつも笑顔になれる！😄",
     "timestamp": "2023-04-01T12:30:00Z"
   },
   {
     "id": 2,
-    "user": "LaughingOut_Loud",
+    "user": "大笑い中",
     "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=LaughingOut_Loud",
-    "content": "I can't stop laughing! My smile score must be through the roof! 🤣",
+    "content": "笑いが止まらない！スマイルスコアが爆上がりしてるはず！🤣",
     "timestamp": "2023-04-01T12:35:00Z"
   },
   {
     "id": 3,
-    "user": "TokenCollector42",
+    "user": "トークン収集家42",
     "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=TokenCollector42",
-    "content": "Just earned 5 LOL tokens watching this! Best video ever! 🎉",
+    "content": "この動画で5 LOLトークンを獲得したよ！最高の動画！🎉",
     "timestamp": "2023-04-01T12:40:00Z"
   },
   {
     "id": 4,
-    "user": "GrinMaster",
+    "user": "笑顔マスター",
     "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=GrinMaster",
-    "content": "My cheeks hurt from smiling so much! Worth it for the tokens though! 😁",
+    "content": "笑いすぎて頬が痛い！でもトークンのためなら価値あり！😁",
     "timestamp": "2023-04-01T12:45:00Z"
   },
   {
     "id": 5,
-    "user": "JoyfulJester",
+    "user": "陽気な道化師",
     "avatar": "https://api.dicebear.com/6.x/avataaars/svg?seed=JoyfulJester",
-    "content": "This site is genius! Combining laughter and rewards? Count me in! 🙌",
+    "content": "このサイトは天才的！笑いと報酬を組み合わせるなんて？私も参加します！🙌",
     "timestamp": "2023-04-01T12:50:00Z"
   }
 ]

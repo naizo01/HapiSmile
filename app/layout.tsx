@@ -1,8 +1,11 @@
+'use client';
+
 import "./globals.css"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { SmileProvider } from "@/Context/SmileContext"
+import { PrivyProvider } from '@privy-io/react-auth'
 
 // Interフォントの設定を修正
 const inter = Inter({ 
@@ -20,10 +23,10 @@ declare global {
   }
 }
 
-export const metadata: Metadata = {
-  title: "Smile & Earn Tokens",
-  description: "Earn tokens by smiling while watching videos",
-}
+// export const metadata: Metadata = {
+//   title: "Smile & Earn Tokens",
+//   description: "Earn tokens by smiling while watching videos",
+// }
 
 export default function RootLayout({
   children,
@@ -35,9 +38,22 @@ export default function RootLayout({
       <head>
       </head>
       <body className={`${inter.className} bg-black text-foreground min-h-screen`}>
-        <SmileProvider>
-          {children}
-        </SmileProvider>
+        <PrivyProvider
+          appId={process.env.NEXT_PUBLIC_PRIVY_APP_ID || ""}
+          config={{
+            appearance: {
+              theme: 'dark',
+              accentColor: '#676FFF',
+            },
+            embeddedWallets: {
+              createOnLogin: 'users-without-wallets',
+            },
+          }}
+        >
+          <SmileProvider>
+            {children}
+          </SmileProvider>
+        </PrivyProvider>
       </body>
     </html>
   )

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Cookies from 'js-cookie'
 
-const COOKIE_KEY = 'smile_token_balance'
+const COOKIE_KEY = 'smile_token_balance_20'
 
 export function useTokenBalance() {
   const [newTokens, setNewTokens] = useState(0)

@@ -22,7 +22,7 @@ export const CustomToast: React.FC<CustomToastProps> = ({ message }) => {
         </div>
       </div>
       <div className="flex-1">
-        <p className="font-semibold">Successfully Claimed!</p>
+        <p className="font-semibold">獲得に成功しました！</p>
         <p className="text-sm opacity-90">{message}</p>
       </div>
       <motion.div

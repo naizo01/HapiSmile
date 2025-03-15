@@ -39,7 +39,7 @@ export function Layout({ children }: LayoutProps) {
                   variant="ghost"
                   className="relative text-white hover:text-yellow-300 text-sm sm:text-base font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
                 >
-                  Video Library
+                  動画ライブラリ
                 </Button>
               </Link>
               <Link href="/video/1" passHref>
@@ -47,7 +47,7 @@ export function Layout({ children }: LayoutProps) {
                   variant="ghost"
                   className="relative text-white hover:text-yellow-300 text-sm sm:text-base font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
                 >
-                  Watch Video
+                  動画を見る
                 </Button>
               </Link>
               <Link href="/rewards" passHref>
@@ -55,7 +55,7 @@ export function Layout({ children }: LayoutProps) {
                   variant="ghost"
                   className="relative text-white hover:text-yellow-300 text-sm sm:text-base font-medium after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-300 after:scale-x-0 hover:after:scale-x-100 after:transition-transform"
                 >
-                  Rewards
+                  報酬
                 </Button>
               </Link>
             </nav>

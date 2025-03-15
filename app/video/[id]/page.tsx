@@ -71,8 +71,8 @@ export default function VideoPage() {
           scale: 1,
         }}
         transition={{
-          duration: Math.random() * 3 + 2,
-          delay: Math.random() * 0.5,
+          duration: 5,
+          delay: Math.random() * 0.5,  // 遅延を短くする（0〜0.5秒）
           ease: "easeOut",
         }}
       />

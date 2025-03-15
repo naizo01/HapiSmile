@@ -49,25 +49,24 @@ export default function Home() {
 
           <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 lg:w-1/2 z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
-              Smile & Earn Together
+              世界を笑顔に
             </h1>
             <p className="text-base md:text-lg mb-6 text-gray-200 max-w-2xl">
-              Watch this featured video and earn tokens while you smile! Join millions of viewers who've earned rewards
-              watching this amazing content.
+            動画を見て笑顔になるだけでトークンが貯まるプラットフォームです。貯めたトークンは特別なNFTやイベント参加など、さまざまな楽しい体験に交換できます。
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
                 className="bg-yellow-400 hover:bg-yellow-500 text-black text-base md:text-lg px-6 py-5 transition-all hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/20"
               >
-                <Play className="mr-2 h-5 w-5" /> Play
+                <Play className="mr-2 h-5 w-5" /> 再生
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-base md:text-lg px-6 py-5 border-2 border-yellow-400/50 hover:bg-yellow-500/20 transition-all hover:scale-105 hover:border-yellow-400"
               >
-                <Info className="mr-2 h-5 w-5" /> More Info
+                <Info className="mr-2 h-5 w-5" /> 詳細情報
               </Button>
             </div>
           </div>
