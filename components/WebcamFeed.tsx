@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { CardContent } from "@/components/ui/card";
-import { useSmile } from ""@/Context/SmileContext";
+import { useSmile } from "@/Context/SmileContext";
 
 export function WebcamFeed() {
   const videoRef = useRef<HTMLVideoElement>(null);

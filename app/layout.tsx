@@ -4,7 +4,7 @@ import "./globals.css"
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { SmileProvider } from ""@/Context/SmileContext"
+import { SmileProvider } from "@/Context/SmileContext"
 import { PrivyProvider } from '@privy-io/react-auth'
 
 // Interフォントの設定を修正

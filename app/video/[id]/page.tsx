@@ -6,12 +6,12 @@ import { TokenDisplay } from "@/components/TokenDisplay"
 import { CommentSection } from "@/components/CommentSection"
 import { WebcamFeed } from "@/components/WebcamFeed"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import videosData from ""@/Context/videos.json"
+import videosData from "@/Context/videos.json"
 import { Layout } from "@/components/Layout"
 import { useParams } from "next/navigation"
 import { useTokenBalance } from "@/hooks/useTokenBalance"
 import { motion, AnimatePresence } from "framer-motion"
-import { useSmile } from ""@/Context/SmileContext"
+import { useSmile } from "@/Context/SmileContext"
 
 interface Video {
   id: string
