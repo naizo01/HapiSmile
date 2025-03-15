@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout"
 import { VideoSlider } from "@/components/VideoSlider"
 import { VideoGrid } from "@/components/VideoGrid"
-import videosData from "@/context/videos.json"
+import videosData from ""@/Context/videos.json"
 import { Button } from "@/components/ui/button"
 import { Play, Info } from "lucide-react"
 

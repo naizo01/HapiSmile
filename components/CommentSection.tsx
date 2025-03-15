@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { MessageCircle, Send } from "lucide-react"
-import commentsData from "../context/comments.json"
+import commentsData from "../Context/comments.json"
 
 interface Comment {
   id: number
