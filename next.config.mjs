@@ -6,6 +6,9 @@ const nextConfig = {
       'canvas': 'commonjs canvas'
     });
     return config;
+  },
+  images: {
+    domains: ['hebbkx1anhila5yf.public.blob.vercel-storage.com'],
   }
 };
 
