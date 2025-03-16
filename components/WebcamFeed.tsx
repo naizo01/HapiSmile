@@ -59,7 +59,7 @@ export function WebcamFeed() {
     const mouthAspectRatio = mouthVertical / mouthHorizontal; // 縦横比（MAR）
 
     // 4. 閾値の設定（調整可能なパラメータ）
-    const EYE_AR_THRESHOLD = 0.2; // 目の縦横比がこの値以下なら目が細まっている
+    const EYE_AR_THRESHOLD = 0.4; // 目の縦横比がこの値以下なら目が細まっている
     const CORNER_RISE_THRESHOLD = 0.4; // 口角上がり量がこの値以上なら口角が上がっている（正規化座標想定）
     const MOUTH_AR_THRESHOLD = 0.7; // 口の縦横比がこの値以上なら口が開いている
     console.log("eyeAspectRatio", eyeAspectRatio);
