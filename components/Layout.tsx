@@ -1,12 +1,17 @@
+"use client"
+
 import type React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { usePrivy } from '@privy-io/react-auth'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
 export function Layout({ children }: LayoutProps) {
+  const { ready, authenticated, login } = usePrivy();
+  
   return (
     <div className="min-h-screen bg-black text-white">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
@@ -58,6 +63,16 @@ export function Layout({ children }: LayoutProps) {
                   報酬
                 </Button>
               </Link>
+              
+              {/* ログインボタン */}
+              <Button
+                variant="outline"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-500 hover:to-yellow-700 font-medium px-4 py-2 rounded-lg transition-all"
+                disabled={!ready || authenticated}
+                onClick={() => login()}
+              >
+                {authenticated ? "ログイン済み" : "ログイン"}
+              </Button>
             </nav>
           </div>
         </div>
