@@ -22,7 +22,6 @@ interface Video {
 export default function VideoPage() {
   const params = useParams()
   const { isSmiling } = useSmile()
-  const [smileScore, setSmileScore] = useState(0)
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null)
   const [showEffect, setShowEffect] = useState(false)
   const { newTokens, totalTokens, lastEarnedToken, earnTokens } = useTokenBalance()
@@ -125,7 +124,7 @@ export default function VideoPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <TokenDisplay newTokens={newTokens} totalTokens={totalTokens} smileScore={smileScore} />
+                    <TokenDisplay newTokens={newTokens} totalTokens={totalTokens} />
                   </motion.div>
                 </div>
               </div>

@@ -2,7 +2,6 @@
 
 import "./globals.css"
 import type React from "react"
-import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { SmileProvider } from "@/Context/SmileContext"
 import { PrivyProvider } from '@privy-io/react-auth'
@@ -15,11 +14,15 @@ const inter = Inter({
   fallback: ['system-ui', 'arial'] // フォールバックフォントを指定
 })
 
-// グローバル型定義
+// グローバル型定義を改善
 declare global {
   interface Window {
-    FilesetResolver: any
-    FaceDetector: any
+    FilesetResolver: {
+      forVisionTasks?: (path: string) => Promise<unknown>
+    }
+    FaceDetector: {
+      createFromOptions?: (vision: unknown, options: Record<string, unknown>) => Promise<unknown>
+    }
   }
 }
 

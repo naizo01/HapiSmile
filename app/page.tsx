@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Play, Info } from "lucide-react"
 
 export default function Home() {
-  const featuredVideo = videosData[Math.floor(Math.random() * videosData.length)]
-
   const shuffleArray = (array: typeof videosData) => {
     const shuffled = [...array]
     for (let i = shuffled.length - 1; i > 0; i--) {

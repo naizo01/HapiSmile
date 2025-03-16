@@ -2,16 +2,58 @@
 
 import { useEffect, useRef, useState } from "react"
 
+// MediaPipe Vision型定義
+interface VisionModule {
+  FilesetResolver: {
+    forVisionTasks: (path: string) => Promise<unknown>
+  }
+  FaceLandmarker: {
+    createFromOptions: (vision: unknown, options: FaceLandmarkerOptions) => Promise<FaceLandmarkerInstance>
+  }
+  FACEMESH_TESSELATION: number[][]
+  FACEMESH_RIGHT_EYE: number[][]
+  FACEMESH_RIGHT_EYEBROW: number[][]
+  FACEMESH_LEFT_EYE: number[][]
+  FACEMESH_LEFT_EYEBROW: number[][]
+  FACEMESH_FACE_OVAL: number[][]
+  FACEMESH_LIPS: number[][]
+}
+
+interface FaceLandmarkerOptions {
+  baseOptions: {
+    modelAssetPath: string
+    delegate: string
+  }
+  runningMode: string
+  outputFaceBlendshapes: boolean
+  outputFacialTransformationMatrixes: boolean
+  numFaces: number
+}
+
+interface FaceLandmarkerInstance {
+  detectForVideo: (video: HTMLVideoElement, timestamp: number) => FaceDetectionResult
+}
+
+interface FaceDetectionResult {
+  faceLandmarks?: FaceLandmark[][]
+}
+
+interface FaceLandmark {
+  x: number
+  y: number
+  z: number
+}
+
 declare global {
   interface Window {
-    vision: any
+    vision: VisionModule
   }
 }
 
 export function FaceLandmarker() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [faceLandmarker, setFaceLandmarker] = useState<any>(null)
+  const [faceLandmarker, setFaceLandmarker] = useState<FaceLandmarkerInstance | null>(null)
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.vision) {
@@ -104,7 +146,7 @@ export function FaceLandmarker() {
 
 function drawConnectors(
   ctx: CanvasRenderingContext2D,
-  landmarks: any[],
+  landmarks: FaceLandmark[],
   connections: number[][],
   style: { color: string; lineWidth?: number },
 ) {

@@ -4,6 +4,7 @@ import type React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { usePrivy } from '@privy-io/react-auth'
+import Image from 'next/image'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -29,10 +30,12 @@ export function Layout({ children }: LayoutProps) {
           {/* ヘッダーコンテンツ */}
           <div className="container mx-auto flex justify-between items-center px-4 py-3 relative z-10 max-w-[1400px]">
             <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-105">
-              <img
+              <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hapisimile_icon-RpUMtfmOWEqaWshMAf38NAOhHhk0L7.jpeg"
                 alt="HapiSmile Logo"
-                className="h-10 w-10 rounded-xl shadow-lg"
+                className="rounded-xl shadow-lg"
+                width={40}
+                height={40}
               />
               <span className="text-xl font-bold bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
                 HapiSmile
