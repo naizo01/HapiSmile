@@ -50,7 +50,7 @@ export default function Home() {
               Make the World Smile
             </h1>
             <p className="text-base md:text-lg mb-6 text-gray-200 max-w-2xl">
-            A platform where you earn tokens just by smiling while watching videos. Exchange your tokens for special NFTs, event participation, and other fun experiences.
+            A platform where you earn tokens just by smiling while watching videos.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
