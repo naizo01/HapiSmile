@@ -71,7 +71,7 @@ export default function VideoPage() {
         }}
         transition={{
           duration: 5,
-          delay: Math.random() * 0.5,  // 遅延を短くする（0〜0.5秒）
+          delay: Math.random() * 0.5,  // Shorter delay (0-0.5 seconds)
           ease: "easeOut",
         }}
       />
@@ -100,7 +100,7 @@ export default function VideoPage() {
           {currentVideo ? (
             <div className="container mx-auto p-2">
               <div className="grid grid-cols-12 gap-2">
-                {/* メインコンテンツエリア（動画） */}
+                {/* Main content area (video) */}
                 <div className="col-span-9">
                   <Card className="overflow-hidden bg-gradient-to-br from-purple-900 to-indigo-900 border-2 border-purple-500/50 shadow-xl">
                     <CardContent className="p-0 aspect-video">
@@ -109,7 +109,7 @@ export default function VideoPage() {
                   </Card>
                 </div>
 
-                {/* サイドバー（WebcamとTokens） */}
+                {/* Sidebar (Webcam and Tokens) */}
                 <div className="col-span-3 flex flex-col gap-2 max-w-[320px]">
                   <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 border-gray-700 backdrop-blur-sm">
                     <CardHeader className="p-2">
@@ -129,7 +129,7 @@ export default function VideoPage() {
                 </div>
               </div>
 
-              {/* コメントセクション */}
+              {/* Comment section */}
               <div className="mt-4">
                 <Card className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 border-gray-700 backdrop-blur-sm">
                   <CardHeader className="p-2">
@@ -147,7 +147,7 @@ export default function VideoPage() {
             </div>
           )}
         </div>
-        {/* コンフェティ */}
+        {/* Confetti */}
         <AnimatePresence>
           {showEffect && (
             <motion.div
@@ -162,7 +162,7 @@ export default function VideoPage() {
             </motion.div>
           )}
         </AnimatePresence>
-        {/* 右下の通知 */}
+        {/* Bottom-right notification */}
         <AnimatePresence>
           {lastEarnedToken > 0 && showEffect && (
             <motion.div

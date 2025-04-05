@@ -1,49 +1,35 @@
-# HapiSmile (ハピスマイル)
+# 😊 **HappySmile** - Converting Smiles into Coins: The Next-Gen On-chain Entertainment Platform
 
-HapiSmileは、ユーザーが動画を見ながら笑顔でいることでトークンを獲得できる、インタラクティブな動画プラットフォームです。このユニークなコンセプトは、エンターテインメントとポジティブな強化を組み合わせ、ユーザーが楽しく積極的に参加することを促進します。
+## 🔮 **Vision**
+HappySmile transforms the universal language of smiles into tangible digital value using Zora's Coins Protocol. We're creating a new entertainment ecosystem where audience emotional reactions directly generate on-chain assets and revenue streams.
 
-## 主な機能
+## 🌟 **Product Overview**
+HappySmile is an innovative entertainment platform that uses AI to detect viewers' smiles in real-time while watching content, instantly tokenizing these emotional reactions via Zora's Coins Protocol. This creates a direct connection between emotional engagement and on-chain value.
 
-1. **動画ライブラリ**: わかりやすく可愛いインターフェースで動画を閲覧・選択
-2. **笑顔検出**: MediaPipe Face Landmarkerを使用したリアルタイムの笑顔検出
-3. **トークンシステム**: 動画視聴中の笑顔に応じてトークンを獲得
-4. **報酬ページ**: 獲得したトークンを様々な報酬と交換
-5. **インタラクティブUI**: アニメーションと視覚的フィードバックを活用した魅力的なユーザーインターフェース
+## ⚙️ **Core Technology**
+- **Real-time Smile Detection**: Our AI system (powered by MediaPipe) analyzes facial expressions through the user's camera, quantifying smile intensity and duration.
+- **Instant Tokenization with Zora**: When smiles reach certain thresholds, the content is immediately tokenized as an ERC-20 coin through Zora's Coins Protocol, becoming tradable via Uniswap v3.
+- **AI-Powered Value Prediction**: Advanced machine learning algorithms analyze historical smile data and trading patterns to predict trending content and optimal $ticker suggestions.
 
-## 各ページの詳細機能
+## 💡 **Unique Features**
+- **Positive-Reinforced Content Discovery**: Content that generates more smiles ranks higher, creating a virtuous cycle that naturally promotes positive, joy-inducing material.
+- **Multi-tier Token Utility**: Viewers can exchange earned tokens for exclusive NFTs, limited event access, and creator interactions - bridging online engagement with real-world experiences.
+- **Smart Trading Suggestions**: AI analyzes trending smile patterns to recommend optimal buying and selling moments for traders.
 
-### ホームページ（動画ライブラリ）
-- Netflix風のレイアウトで動画をカテゴリー別に表示
-- 大きなヒーローセクションで注目の動画を紹介
-- 動画カードにホバーエフェクトを実装し、タイトルとプレイボタンを表示
-- レスポンシブデザインで様々なデバイスに対応
+## 🚀 **Why This Matters for Zora**
+- **Revolutionary Monetization Model**: Transforms emotional reactions into immediate revenue through trading fees and LP fees.
+- **Unprecedented Integration**: Seamlessly connects human emotion, AI detection, and on-chain tokenization in under 1 second.
+- **Enhanced Creator Analytics**: Provides creators with detailed emotional engagement metrics tied directly to token performance.
+- **Community-Building**: Creates a positive ecosystem where creators are incentivized to produce content that genuinely makes people happy.
 
-### 動画視聴ページ
-- YouTubeプレーヤーを使用した動画再生
-- WebカメラフィードとMediaPipe Face Landmarkerを使用したリアルタイムの笑顔検出
-- 笑顔度に応じたトークン獲得システム
-- リアルタイムのトークン残高表示
-- コメントセクションで他のユーザーとのインタラクション
+## 🔍 **Technical Implementation**
+- Frontend: React/Next.js with TensorFlow.js for real-time facial analysis
+- Backend: Node.js with Zora Coins SDK for instant tokenization
+- AI: Custom machine learning model trained on smile intensity correlation with content virality
+- Blockchain: Fully integrated with Base for low-cost, high-throughput transactions
 
-### 報酬ページ
-- アニメーション付きの残高表示
-- 様々な報酬オプションをカード形式で表示
-- NFTのミント機能（シミュレーション）
-- トークンを使用した報酬の獲得プロセス
-- トースト通知による操作結果のフィードバック
+## 📈 **Growth Potential**
+HappySmile creates an entirely new category of on-chain entertainment where emotional reactions become tradable assets. As the platform grows, we'll expand beyond smiles to capture a wider range of positive emotional responses, building the first comprehensive on-chain emotional economy.
 
-## 使用技術
-
-- Next.js 13 (Appルーター)
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/uiコンポーネント
-- Framer Motion（アニメーション）
-- MediaPipe Face Landmarker（笑顔検出）
-- Lucide React（アイコン）
-
-## セットアップ
-
-1. リポジトリをクローン:
-
+## 🌐 **Global Impact**
+By tokenizing smiles - a universal human expression that transcends language barriers - HappySmile can reach global audiences regardless of cultural or linguistic differences, dramatically expanding the reach of Zora's ecosystem.

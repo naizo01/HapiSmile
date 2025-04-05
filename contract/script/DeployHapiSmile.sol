@@ -2,12 +2,12 @@
 pragma solidity ^0.8.20;
 
 import {Script, console} from "forge-std/Script.sol";
-import {HapiSmileToken} from "../src/HapiSmileToken.sol";
-import {HapiSmileNFT} from "../src/HapiSmileNFT.sol";
+import {HappySmileToken} from "../src/HappySmileToken.sol";
+import {HappySmileNFT} from "../src/HappySmileNFT.sol";
 
-contract DeployHapiSmile is Script {
-    HapiSmileToken public token;
-    HapiSmileNFT public nft;
+contract DeployHappySmile is Script {
+    HappySmileToken public token;
+    HappySmileNFT public nft;
 
     function setUp() public {}
 
@@ -15,12 +15,12 @@ contract DeployHapiSmile is Script {
         vm.startBroadcast();
 
         // まずトークンをデプロイ
-        token = new HapiSmileToken();
-        console.log("HapiSmileToken deployed at:", address(token));
+        token = new HappySmileToken();
+        console.log("HappySmileToken deployed at:", address(token));
 
         // 次にNFTをデプロイ（トークンのアドレスを渡す）
-        nft = new HapiSmileNFT(address(token));
-        console.log("HapiSmileNFT deployed at:", address(nft));
+        nft = new HappySmileNFT(address(token));
+        console.log("HappySmileNFT deployed at:", address(nft));
 
         // NFTコントラクトをディストリビューターとして追加
         token.addDistributor(address(nft));

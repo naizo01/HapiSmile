@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract HapiSmileToken is ERC20, Ownable {
+contract HappySmileToken is ERC20, Ownable {
     // トークン配布を許可されたアドレスのマッピング
     mapping(address => bool) public distributors;
     
@@ -13,7 +13,7 @@ contract HapiSmileToken is ERC20, Ownable {
     event DistributorRemoved(address indexed distributor);
     event TokensDistributed(address indexed to, uint256 amount);
 
-    constructor() ERC20("HapiSmile Token", "HAPI") Ownable(msg.sender) {
+    constructor() ERC20("HappySmile Token", "HAPI") Ownable(msg.sender) {
         // 初期供給量（例：1,000,000トークン）
         _mint(msg.sender, 1_000_000 * 10 ** decimals());
     }

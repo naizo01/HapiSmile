@@ -44,7 +44,7 @@ export function RewardCard({ imageSrc, title, description, cost, onClaim, isDisa
               disabled
               className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg cursor-default"
             >
-              <Check className="mr-2 h-5 w-5" /> 獲得済み
+              <Check className="mr-2 h-5 w-5" /> Claimed
             </Button>
           ) : (
             <Button
@@ -52,7 +52,7 @@ export function RewardCard({ imageSrc, title, description, cost, onClaim, isDisa
               disabled={isDisabled}
               className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              報酬を獲得
+              Claim Reward
             </Button>
           )}
         </motion.div>

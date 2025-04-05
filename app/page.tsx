@@ -47,24 +47,24 @@ export default function Home() {
 
           <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3 lg:w-1/2 z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
-              世界を笑顔に
+              Make the World Smile
             </h1>
             <p className="text-base md:text-lg mb-6 text-gray-200 max-w-2xl">
-            動画を見て笑顔になるだけでトークンが貯まるプラットフォームです。貯めたトークンは特別なNFTやイベント参加など、さまざまな楽しい体験に交換できます。
+            A platform where you earn tokens just by smiling while watching videos. Exchange your tokens for special NFTs, event participation, and other fun experiences.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
                 className="bg-yellow-400 hover:bg-yellow-500 text-black text-base md:text-lg px-6 py-5 transition-all hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/20"
               >
-                <Play className="mr-2 h-5 w-5" /> 再生
+                <Play className="mr-2 h-5 w-5" /> Play
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-base md:text-lg px-6 py-5 border-2 border-yellow-400/50 hover:bg-yellow-500/20 transition-all hover:scale-105 hover:border-yellow-400"
               >
-                <Info className="mr-2 h-5 w-5" /> 詳細情報
+                <Info className="mr-2 h-5 w-5" /> More Info
               </Button>
             </div>
           </div>
@@ -72,9 +72,9 @@ export default function Home() {
 
         {/* Video Sliders */}
         <div className="space-y-12 pb-12 max-w-[1400px] mx-auto overflow-visible">
-          <VideoSlider title="最新" videos={getLatestVideos()} />
-          <VideoSlider title="ランキング" videos={getRankedVideos()} />
-          <VideoSlider title="注目" videos={getFeaturedVideos()} />
+          <VideoSlider title="Latest" videos={getLatestVideos()} />
+          <VideoSlider title="Trending" videos={getRankedVideos()} />
+          <VideoSlider title="Featured" videos={getFeaturedVideos()} />
         </div>
 
         {/* All Videos Grid */}

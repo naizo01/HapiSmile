@@ -21,24 +21,24 @@ interface Reward {
 const REWARDS: Reward[] = [
   {
     id: "limited-video",
-    title: "限定動画を解除",
-    description: "独占コンテンツにアクセス",
+    title: "Unlock Limited Video",
+    description: "Access exclusive content",
     cost: 10,
     imageSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unlock_limited_video_nft-eEKfVGpCweEdPKiLu68SJ5hQJ4RB1L.png",
   },
   {
     id: "nft-exchange",
-    title: "NFT交換",
-    description: "ユニークなデジタルコレクティブルを入手",
+    title: "NFT Exchange",
+    description: "Get unique digital collectibles",
     cost: 50,
     imageSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NFT_Exchange_nft-jOg0oOgwvK7LagFccCEdp2oFrZTFq7.png",
   },
   {
     id: "offline-event",
-    title: "オフラインイベントQRコード",
-    description: "限定オフラインイベントへのアクセス権を取得",
+    title: "Offline Event QR Code",
+    description: "Get access to exclusive offline events",
     cost: 100,
     imageSrc:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Offline_Event_QR_Code_nft-lIvemVg5VSn47IaLhMT7eFIB0v7s1r.png",
@@ -52,7 +52,7 @@ export default function RewardsPage() {
   const [claimedRewards, setClaimedRewards] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
-    // ローカルストレージから獲得済み報酬を読み込む
+    // Load claimed rewards from local storage
     const savedClaimedRewards = localStorage.getItem("claimedRewards")
     if (savedClaimedRewards) {
       setClaimedRewards(JSON.parse(savedClaimedRewards))
@@ -66,8 +66,8 @@ export default function RewardsPage() {
       const tokenId = `NFT-${Date.now()}`
       setClaimedNFT({ name: reward.title, image: reward.imageSrc, tokenId })
 
-      // 成功メッセージにカスタムトーストを使用
-      toast(<CustomToast message={`獲得しました: ${reward.title}`} />, {
+      // Use custom toast for success message
+      toast(<CustomToast message={`Acquired: ${reward.title}`} />, {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -77,12 +77,12 @@ export default function RewardsPage() {
         progress: undefined,
       })
 
-      // 獲得済み報酬を更新
+      // Update claimed rewards
       const newClaimedRewards = { ...claimedRewards, [reward.id]: true }
       setClaimedRewards(newClaimedRewards)
       localStorage.setItem("claimedRewards", JSON.stringify(newClaimedRewards))
     } else {
-      toast.error("この報酬を獲得するのに十分なトークンがありません")
+      toast.error("You don't have enough tokens to claim this reward")
     }
     setIsProcessing(false)
   }
@@ -90,7 +90,7 @@ export default function RewardsPage() {
   return (
     <Layout>
       <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-6 text-primary">報酬</h1>
+        <h1 className="text-3xl font-bold mb-6 text-primary">Rewards</h1>
         <div className="mb-8">
           <BalanceDisplay balance={totalTokens} />
         </div>

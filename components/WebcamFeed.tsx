@@ -18,7 +18,7 @@ export function WebcamFeed() {
     const canvas = canvasRef.current;
     return canvas ? canvas.getContext("2d") : null;
   };
-  // ユーティリティ関数: 2点間の距離を計算（ユークリッド距離）
+  // Utility function: Calculate distance between two points (Euclidean distance)
   function distance(
     pt1: { x: number; y: number },
     pt2: { x: number; y: number }
@@ -29,43 +29,43 @@ export function WebcamFeed() {
   }
 
   function detectSmile(points: Array<{ x: number; y: number }>): boolean {
-    // 1. 左右の目の縦横比（Eye Aspect Ratio）の計算
-    const leftEyeVert = distance(points[159], points[145]); // 左目の上下（まぶた間）の距離
-    const leftEyeHoriz = distance(points[33], points[133]); // 左目の左右（目尻間）の距離
-    const rightEyeVert = distance(points[386], points[374]); // 右目の上下の距離
-    const rightEyeHoriz = distance(points[362], points[263]); // 右目の左右の距離
+    // 1. Calculate the aspect ratio of left and right eyes (Eye Aspect Ratio)
+    const leftEyeVert = distance(points[159], points[145]); // Distance between upper and lower eyelids of left eye
+    const leftEyeHoriz = distance(points[33], points[133]); // Distance between left and right corners of left eye
+    const rightEyeVert = distance(points[386], points[374]); // Distance between upper and lower eyelids of right eye
+    const rightEyeHoriz = distance(points[362], points[263]); // Distance between left and right corners of right eye
 
     const leftEAR = leftEyeVert / leftEyeHoriz;
     const rightEAR = rightEyeVert / rightEyeHoriz;
-    const eyeAspectRatio = (leftEAR + rightEAR) / 2; // 左右の平均を使用
+    const eyeAspectRatio = (leftEAR + rightEAR) / 2; // Average of left and right
 
-    // 2. 口角の上がり具合の計算（口の中心点[13]を基準に口角の高さを見る）
-    const baseY = points[13].y; // 基準として口の中心あたりのポイント（[13]）のY座標
-    const leftCornerY = points[61].y; // 左口角のY座標
-    const rightCornerY = points[291].y; // 右口角のY座標
+    // 2. Calculate the upward curve of mouth corners (using point [13] at the center of the mouth as a reference)
+    const baseY = points[13].y; // Y-coordinate of the reference point near the center of the mouth (point [13])
+    const leftCornerY = points[61].y; // Y-coordinate of left mouth corner
+    const rightCornerY = points[291].y; // Y-coordinate of right mouth corner
 
-    // 口角の基準点からの相対的な上がり量
+    // Relative upward curve of mouth corners from the reference point
     const leftCornerRise = baseY - leftCornerY;
     const rightCornerRise = baseY - rightCornerY;
-    // 左右どちらか小さい方を採用してもよいし、平均してもよい
-    const cornerRise = Math.min(leftCornerRise, rightCornerRise)  *100;
+    // Use the smaller of the two values or their average
+    const cornerRise = Math.min(leftCornerRise, rightCornerRise) * 100;
 
-    // 3. 口の開き具合の計算（上下の唇の距離と口幅の比率）
-    // ※上唇と下唇の代表点が不明な場合は仮にpoints[0]とpoints[17]を使用（適宜置き換え）
-    const mouthTopY = points[0].y; // 上唇の代表ポイント（例: 0番）
-    const mouthBottomY = points[17].y; // 下唇の代表ポイント（例: 17番）
-    const mouthVertical = Math.abs(mouthBottomY - mouthTopY); // 口の縦の開き
-    const mouthHorizontal = distance(points[61], points[291]); // 口の横幅（口角間の距離）
-    const mouthAspectRatio = mouthVertical / mouthHorizontal; // 縦横比（MAR）
+    // 3. Calculate the mouth opening ratio (ratio of vertical distance to horizontal width)
+    // If exact points for upper and lower lips are unknown, use points[0] and points[17] as placeholders
+    const mouthTopY = points[0].y; // Representative point for upper lip (e.g., point 0)
+    const mouthBottomY = points[17].y; // Representative point for lower lip (e.g., point 17)
+    const mouthVertical = Math.abs(mouthBottomY - mouthTopY); // Vertical opening of mouth
+    const mouthHorizontal = distance(points[61], points[291]); // Width of mouth (distance between corners)
+    const mouthAspectRatio = mouthVertical / mouthHorizontal; // Aspect ratio (MAR)
 
-    // 4. 閾値の設定（調整可能なパラメータ）
-    const EYE_AR_THRESHOLD = 0.4; // 目の縦横比がこの値以下なら目が細まっている
-    const CORNER_RISE_THRESHOLD = 0.4; // 口角上がり量がこの値以上なら口角が上がっている（正規化座標想定）
-    const MOUTH_AR_THRESHOLD = 0.7; // 口の縦横比がこの値以上なら口が開いている
+    // 4. Set thresholds (adjustable parameters)
+    const EYE_AR_THRESHOLD = 0.4; // Eye aspect ratio below this value indicates squinting eyes
+    const CORNER_RISE_THRESHOLD = 0.4; // Mouth corner rise above this value indicates upturned corners
+    const MOUTH_AR_THRESHOLD = 0.7; // Mouth aspect ratio above this value indicates open mouth
     console.log("eyeAspectRatio", eyeAspectRatio);
     console.log("cornerRise", cornerRise);
     console.log("mouthAspectRatio", mouthAspectRatio);
-    // 5. 条件を全て満たしているか判定
+    // 5. Check if all conditions are met
     console.log(
       eyeAspectRatio < EYE_AR_THRESHOLD,
       cornerRise > CORNER_RISE_THRESHOLD,
@@ -76,9 +76,9 @@ export function WebcamFeed() {
       cornerRise > CORNER_RISE_THRESHOLD &&
       mouthAspectRatio > MOUTH_AR_THRESHOLD
     ) {
-      return true; // 笑顔と判定
+      return true; // Identified as smiling
     } else {
-      return false; // 笑顔ではない
+      return false; // Not smiling
     }
   }
 

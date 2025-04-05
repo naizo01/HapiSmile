@@ -3,14 +3,14 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./HapiSmileToken.sol";
+import "./HappySmileToken.sol";
 
-contract HapiSmileNFT is ERC721URIStorage, Ownable {
+contract HappySmileNFT is ERC721URIStorage, Ownable {
     // Countersの代わりに単純なuint256を使用
     uint256 private _tokenIds;
     
-    // HapiSmileトークンのコントラクト
-    HapiSmileToken public hapiToken;
+    // HappySmileトークンのコントラクト
+    HappySmileToken public hapiToken;
     
     // NFTタイプごとの価格設定
     mapping(uint256 => uint256) public nftPrices;
@@ -27,8 +27,8 @@ contract HapiSmileNFT is ERC721URIStorage, Ownable {
     event NFTMinted(address indexed owner, uint256 indexed tokenId, uint256 nftType);
     event NFTPriceUpdated(uint256 nftType, uint256 price);
     
-    constructor(address _tokenAddress) ERC721("HapiSmile NFT", "HAPINFT") Ownable(msg.sender) {
-        hapiToken = HapiSmileToken(_tokenAddress);
+    constructor(address _tokenAddress) ERC721("HappySmile NFT", "HAPINFT") Ownable(msg.sender) {
+        hapiToken = HappySmileToken(_tokenAddress);
         
         // 初期価格設定
         nftPrices[LIMITED_VIDEO_NFT] = 10 * 10 ** 18; // 10トークン

@@ -2,12 +2,12 @@
 pragma solidity ^0.8.20;
 
 import {Test, console} from "forge-std/Test.sol";
-import {HapiSmileToken} from "../src/HapiSmileToken.sol";
-import {HapiSmileNFT} from "../src/HapiSmileNFT.sol";
+import {HappySmileToken} from "../src/HappySmileToken.sol";
+import {HappySmileNFT} from "../src/HappySmileNFT.sol";
 
-contract HapiSmileTest is Test {
-    HapiSmileToken public token;
-    HapiSmileNFT public nft;
+contract HappySmileTest is Test {
+    HappySmileToken public token;
+    HappySmileNFT public nft;
     
     address public owner = address(1);
     address public user1 = address(2);
@@ -17,10 +17,10 @@ contract HapiSmileTest is Test {
         vm.startPrank(owner);
         
         // トークンをデプロイ
-        token = new HapiSmileToken();
+        token = new HappySmileToken();
         
         // NFTをデプロイ
-        nft = new HapiSmileNFT(address(token));
+        nft = new HappySmileNFT(address(token));
         
         // NFTコントラクトをディストリビューターとして追加
         token.addDistributor(address(nft));
@@ -34,7 +34,7 @@ contract HapiSmileTest is Test {
     
     // トークンの基本機能テスト
     function testTokenBasics() public {
-        assertEq(token.name(), "HapiSmile Token");
+        assertEq(token.name(), "HappySmile Token");
         assertEq(token.symbol(), "HAPI");
         assertEq(token.decimals(), 18);
         
@@ -78,7 +78,7 @@ contract HapiSmileTest is Test {
     
     // NFTの基本機能テスト
     function testNFTBasics() public {
-        assertEq(nft.name(), "HapiSmile NFT");
+        assertEq(nft.name(), "HappySmile NFT");
         assertEq(nft.symbol(), "HAPINFT");
         
         // NFTタイプの価格確認

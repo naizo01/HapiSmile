@@ -18,10 +18,10 @@ export function BalanceDisplay({ balance }: BalanceDisplayProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      {/* グラデーション背景 */}
+      {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20" />
 
-      {/* アニメーション付きボーダーグラデーション */}
+      {/* Animated border gradient */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-50"
         style={{
@@ -31,7 +31,7 @@ export function BalanceDisplay({ balance }: BalanceDisplayProps) {
         }}
       />
 
-      {/* コンテンツコンテナ */}
+      {/* Content container */}
       <motion.div
         className="relative p-8 bg-black/50 backdrop-blur-sm"
         onHoverStart={() => setIsHovered(true)}
@@ -41,7 +41,7 @@ export function BalanceDisplay({ balance }: BalanceDisplayProps) {
       >
         <div className="flex items-center justify-between">
           <div className="space-y-3">
-            <h3 className="text-lg font-medium text-gray-200/80">あなたの残高</h3>
+            <h3 className="text-lg font-medium text-gray-200/80">Your Balance</h3>
             <motion.p
               className="text-4xl font-bold bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 bg-clip-text text-transparent"
               animate={{
@@ -68,7 +68,7 @@ export function BalanceDisplay({ balance }: BalanceDisplayProps) {
           </motion.div>
         </div>
 
-        {/* 光沢効果 */}
+        {/* Gloss effect */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-10"
           style={{

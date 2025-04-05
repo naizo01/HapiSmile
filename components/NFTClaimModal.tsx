@@ -32,7 +32,7 @@ export function NFTClaimModal({ isOpen, onClose, nftDetails }: NFTClaimModalProp
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-yellow-400">NFT獲得！</h2>
+              <h2 className="text-2xl font-bold text-yellow-400">NFT Acquired!</h2>
               <Button variant="ghost" size="icon" onClick={onClose}>
                 <X className="h-6 w-6 text-gray-400" />
               </Button>
@@ -44,11 +44,11 @@ export function NFTClaimModal({ isOpen, onClose, nftDetails }: NFTClaimModalProp
                 className="w-64 h-64 object-cover mx-auto mb-4 rounded-lg"
               />
               <h3 className="text-xl font-semibold mb-2 text-white">{nftDetails.name}</h3>
-              <p className="text-gray-400 mb-4">トークンID: {nftDetails.tokenId}</p>
+              <p className="text-gray-400 mb-4">Token ID: {nftDetails.tokenId}</p>
               <div className="space-y-2">
-                <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black">ギャラリーで見る</Button>
+                <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black">View in Gallery</Button>
                 <Button variant="outline" className="w-full" onClick={onClose}>
-                  閉じる
+                  Close
                 </Button>
               </div>
             </div>

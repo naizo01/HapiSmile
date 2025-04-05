@@ -6,15 +6,15 @@ import { Inter } from "next/font/google"
 import { SmileProvider } from "@/Context/SmileContext"
 import { PrivyProvider } from '@privy-io/react-auth'
 
-// Interフォントの設定を修正
+// Inter font configuration
 const inter = Inter({ 
   subsets: ["latin"],
   display: 'swap',
   preload: true,
-  fallback: ['system-ui', 'arial'] // フォールバックフォントを指定
+  fallback: ['system-ui', 'arial'] // Specify fallback fonts
 })
 
-// グローバル型定義を改善
+// Improved global type definitions
 declare global {
   interface Window {
     FilesetResolver: {
